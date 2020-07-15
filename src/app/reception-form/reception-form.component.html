@@ -1,0 +1,68 @@
+
+<div class="form">
+  <form [formGroup]="visitorFormGroup" (ngSubmit)="onSubmit()">
+   
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+
+    </div>
+    <div>
+
+      <!-- <mat-radio-button type="radio" name="gender" value="Female" (click)="setradio('Female')"  >  
+        Female </mat-radio-button>
+       <mat-radio-button type="radio" name="gender" value="Male" (click)="setradio('Male')"   >  
+      Male  </mat-radio-button> -->
+
+      <mat-radio-group formControlName="gender" class="example-radio-group" [(ngModel)]="gender">
+        <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender">
+          {{gender}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Mobile Number" pattern="[789][0-9]{9}" formControlName="mobile">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input type="Email" matInput placeholder="Enter your Email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="Purpose" formControlName="purpose">
+          <mat-option *ngFor="let purpose of purposes" [value]="purpose.value">
+            {{ purpose.value }}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+    </div>
+    <div>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="TOmeet" formControlName="tomeet" [matAutocomplete]="auto" [formControl]="tomeet"  [(ngModel)]="tomeetf">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let state of filteredTomeet | async" [value]="state.name">
+            <img style="vertical-align:middle;" aria-hidden src="{{state.img}}" height="25" />
+            <span>{{ state.name }}</span> |
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+
+    </div>
+
+    <div>
+      <input mat-button type="submit" class="btn btn-lg btn-info" value="submit">
+    </div>
+  </form>
+</div>

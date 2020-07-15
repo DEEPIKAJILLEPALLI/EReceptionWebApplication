@@ -1,0 +1,32 @@
+
+<div *ngIf="visitor" class="flex-container">
+<mat-card  class="example-card spacing">
+    <mat-card-header   >
+      <div mat-card-avatar *ngIf="visitor.Gender=='Female'" >
+        <img src="assets/female.jpg" height="30" width="30" class="style">
+      </div>
+      <div mat-card-avatar *ngIf="visitor.Gender=='Male'" >
+        <img src="assets/male.jpg" height="30" width="30" class="style">
+      </div>
+      <mat-card-title><strong >{{visitor.Name}}</strong></mat-card-title>
+    </mat-card-header> 
+
+      <mat-card-subtitle ><b >Gender</b> {{visitor.Gender}}</mat-card-subtitle>
+      <mat-card-subtitle><b  >Email</b> {{visitor.Email}}</mat-card-subtitle>
+      <mat-card-subtitle> <b  > Mobile</b>  {{visitor.Mobile}}</mat-card-subtitle>
+      <mat-card-subtitle>  <b  >Address</b>  {{visitor.Address}}</mat-card-subtitle>
+      <mat-card-subtitle>  <b  >Purpose</b>  {{visitor.Purpose}}</mat-card-subtitle>
+      <mat-card-subtitle> <b  >ToMeet</b>  {{visitor.ToMeet}}</mat-card-subtitle>
+      <mat-card-subtitle><b  >InTime</b>  {{visitor.InTime}}</mat-card-subtitle>
+
+      <mat-card-subtitle *ngIf="!this.visitor.OutTime"> <b  >OutTime</b>
+        <button style="background-color:mediumpurple"mat-button [disabled]="this.visitor.OutTime" (click)="Logout()">Logout</button>
+        {{visitor.OutTime}}
+      </mat-card-subtitle>
+      <mat-card-subtitle *ngIf="this.visitor.OutTime"> <b  >OutTime</b>
+        {{visitor.OutTime}}
+      </mat-card-subtitle>
+   
+    
+  </mat-card> 
+</div>

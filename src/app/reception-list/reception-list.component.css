@@ -1,0 +1,22 @@
+.row-is-selected {
+    background-color:mediumpurple;
+}
+.table {
+    width: 50%;
+  }
+  .mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width:880px
+}
+  
+  td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: 12px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+  }

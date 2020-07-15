@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>ERECEPTION</span>
+  </mat-toolbar-row>
+  </mat-toolbar>
+<div>
+  <button mat-button color="primary" (click)="openFormDialog()">AddVistor</button>
+  <button mat-button color="primary" (click)="openEditDialog()"[disabled]="!this.selectedvisitor">EditVisitor</button>
+  <button mat-button color="primary" (click)="openDeleteDialog()" [disabled]="!this.selectedvisitor">DeleteVisitor</button>
+  <div style="display: flex; flex-direction: row; width: 100%; height: 100%;">
+    <div style="display: flex; width: 70%; padding: 10px;">
+      <app-reception-list  [reload]="reloadVisitors" (onVisitorSelection)="setSelectedVisitor($event)"></app-reception-list>
+    </div>
+    <div style="display: flex; width: 30%; padding: 10px;">
+      <app-visitor-info [visitor]="selectedvisitor"></app-visitor-info>
+    </div>
+  </div>
+</div>

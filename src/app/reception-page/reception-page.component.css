@@ -1,0 +1,32 @@
+.searchBar {
+    width: 550px;
+}
+.row-is-selected {
+    background-color:mediumpurple;
+}
+/* .table {
+    width: 50%;
+  } */
+  .mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+  
+  td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: 3px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+  }
+  .MatPagination {
+    display: flex;
+    align-items: center;
+     justify-content: center; 
+    min-height: 56px;
+    padding: 0 8px;
+    flex-wrap: wrap-reverse;
+}
